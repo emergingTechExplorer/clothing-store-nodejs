@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+* {
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.main-header {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(Images/header.png);
+    background-blend-mode: multiply;
+    padding-bottom: 80px;
+    background-position: center -300px;
+}
+
+.main-header-content{
+    text-align: center;
+    color: white;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 3em;
+    margin: 0;
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.nav-list {
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid white;
+}
+
+.nav li {
+    display: inline;
+    font-size: 1.2em;
+    padding-right: 5%;
+}
+
+.nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5em;
+}
+
+.nav a:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.text-block {
+    text-align: justify;
+    margin-bottom: 15%;
+}
+
+.company-logo {
+    display: block;
+    padding: 10px;
+    height: 250px;
+    margin: 0 auto;
+    float: left;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-footer {
+    background-color: #232c30;
+    padding-bottom: 2%;
+}
+
+.footer-title {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    flex-grow: 1;
+    padding-left: 20px;
+    margin: auto 0;
+}
+
+.footer-content {
+    display: flex;
+    padding-top: 2%;
+}
+
+.footer-list li {
+    display: inline;
+    padding-right: 30px;
+}
+
+.footer-image {
+    height: 50px;
+}
+
+.main-header-tab-only {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(Images/header.png);
+    background-blend-mode: multiply;
+    padding-bottom: 40px;
+    background-position: center -300px;
+}
+
+.store-header {
+    font-weight: bold;
+    font-size: 2.5em;
+    margin: 0;
+    text-align: center;
+}
+
+.shop-image {
+    width: 250px;
+}
+
+.shop-item-title {
+    display: block;
+    font-size: 1.2em;
+
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+.shop-item {
+    display: block;
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+
+.item-price {
+    padding-right: 20px;
+}
+
+.price-add-to-cart {
+    padding-top: 10px;
+}
+
+.class-btn {
+    background-color: #232c30;
+    color: white;
+    padding: 0.7em;
+    border: none;
+    border-radius: 0.3em; 
+}
+
+.class-btn:hover {
+    background-color: #607a7b;
+    cursor: pointer;
+}
+
+.cart-rows-header {
+    margin-top: 40px;
+    display: flex;
+    text-align: center;
+}
+
+.cart-row-header {
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-right: 50px;
+}
+
+.cart-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.cart-image {
+    height: 80px;
+    border-radius: 10%;
+}
+
+.btn-danger {
+    background-color: rgb(210, 24, 24);
+}
+
+.cart-item {
+    display: flex;
+    width: 10%;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.cart-price {
+    width: 50%;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.cart-quantity-group {
+    width: 30%;
+}
+
+.cart-item-name {
+    padding-left: 20px;
+}
+
+.total-text{
+    font-weight: bold;
+    font-size: 1.4em;
+    flex-grow: 1;
+    text-align: end;
+    padding-right: 20px;
+}
+
+.total-value{
+    font-size: 1.4em;
+    
+}
+
+.total-group {
+    display: flex;
+}
+
+.purchase-btn{
+    display: block;
+    font-size: 1.5em;
+    margin: 10px auto 10px auto;
+}
