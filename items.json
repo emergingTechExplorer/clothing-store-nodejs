@@ -1,11 +1,28 @@
 {
-  "music": [
+  "clothes": [
     {
       "id": 1,
-      "name": "Album 1",
-      "price": 1299,
-      "imgName": "Album 1.png"
+      "name": "T-shirt",
+      "price": 50,
+      "imgName": "tshirt.png"
+    },
+    {
+      "id": 2,
+      "name": "Short",
+      "price": 40,
+      "imgName": "short.png"
+    },
+    {
+      "id": 3,
+      "name": "Shirt",
+      "price": 80,
+      "imgName": "shirt.png"
+    },
+    {
+      "id": 4,
+      "name": "Pant",
+      "price": 60,
+      "imgName": "pant.png"
     }
-  ],
-  "merch": []
+  ]
 }
