@@ -1,9 +1,0 @@
-express is a framework for developing web applications in node
-ejs is a view templating language so that we can put server-side code inside front-end HTML views
-stripe 
-lockfile will make sure at depolyment, the library versions stay the same as the local environment
-dev dependency will only be installed in development environment (such as own PC).
-it wont be installed in production
-npm install express --save
-npm install dotenv --save-dev
-
