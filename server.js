@@ -26,9 +26,9 @@ app.use(express.static('public'))
 
 // create a route for the store page
 // here we can do code to send variables to the store page
-app.get('/store', function (req, res) {
+app.get('/store', (req, res) => {
     // data is the actual information in the file
-    fs.readFile('items.json', function (error, data) {
+    fs.readFile('items.json', (error, data) => {
         if (error) {
             res.status(500).end()
         } else {
@@ -37,6 +37,7 @@ app.get('/store', function (req, res) {
             // need to live in a folder called "views"
             res.render('store.ejs', {
                 // pass all the different variables that you want to send to that server
+                stripePublicKey: stripePublicKey,
                 items: JSON.parse(data)
             })
         }

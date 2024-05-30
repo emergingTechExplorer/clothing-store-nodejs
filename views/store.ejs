@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="store.js" async></script>
+    <!-- import script tag to get Stripe API into the page -->
+    <!-- We use defer to make sure stripe script loads first before store.js scripts -->
+    <script src="https://js.stripe.com/v3/" defer></script>
+    <!-- create an inline script to set the Stripe publishable key -->
+    <script>
+      // we are making this a javascript variable so that we can access it inside store.js
+      var stripePublicKey = '<%= stripePublicKey %>'
+    </script>
+    <script src="store.js" defer></script>
   </head>
   <body>
     <header class="main-header-tab-only main-header-content">
