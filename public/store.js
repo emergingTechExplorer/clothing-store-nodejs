@@ -46,12 +46,18 @@ function addToCartClicked(event) {
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText;
     var price = shopItem.getElementsByClassName('item-price')[0].innerText;
     var imageSrc = shopItem.getElementsByClassName('shop-image')[0].src;
+    // dataset accesses all the properties of HTML that are pre-fixed with data-
+    // here dataset.itemId will access the property data-item-id on our HTML attribute (here we use camelcase)
+    var id = shopItem.dataset.itemId
     addItemToCart(title, price, imageSrc);
     updateCartTotal();
 }
 
-function addItemToCart(title, price, imageSrc) {
+function addItemToCart(title, price, imageSrc, id) {
     var cartRow = document.createElement('div')
+    // we do this to make sure id of item is saved in cart. And when we access the cart rows, they all will
+    // have IDs linked to them
+    cartRow.dataset.itemId = id
     var cartItems = document.getElementsByClassName('cart-items')[0];
     var cartItemNames = cartItems.getElementsByClassName('cart-item-name')
     for (var i = 0; i < cartItemNames.length; i++) {
@@ -97,12 +103,41 @@ function updateCartTotal() {
     document.getElementsByClassName("total-value")[0].innerText = "$" + total;
 }
 
-function purchaseClicked(){
-    alert('Thank you for your purcase');
-    var cartItems = document.getElementsByClassName('cart-items')[0];
-    while (cartItems.hasChildNodes()){
-        cartItems.removeChild(cartItems.firstChild)
+// variable to handle stripe interactions
+// StripeCheckout object is coming from stripe library
+// we need to configure to send the actual information we need
+var stripeHandler = StripeCheckout.configure({
+    // below is the key sent from server to front-end view page, and now can access in front-end js
+    key: stripePublicKey,
+    locale: 'auto',
+    // inside this function, we need to put all the information for how we want to respond when stripe
+    // send us back the information.
+    // token function is going to be called after the person click purchase button, fillout card information
+    // then it will sent to stripe, stripe verifies everything and will send back and will call the token method
+    token: (token) => {
+        
     }
-    updateCartTotal();
+})
+
+
+// when we click on purchase button, it is going to call stripe and stripe is going to call us back and say that
+// it is valid. And we can call the server and the server is going to do all the checkout information that we need to do
+function purchaseClicked() {
+    // alert('Thank you for your purcase');
+    // var cartItems = document.getElementsByClassName('cart-items')[0];
+    // while (cartItems.hasChildNodes()){
+    //     cartItems.removeChild(cartItems.firstChild)
+    // }
+    // updateCartTotal();
+
+    var priceElement = document.getElementsByClassName('total-value')[0]
+    // convert string into floating point number
+    // stripe expects in cent format and we multiple by 100
+    var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
+    // open the pop-up box
+    stripeHandler.open({
+        // set amount to price variable
+        amount: price
+    })
 }
 
